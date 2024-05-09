@@ -1,18 +1,21 @@
 *{ 
     box-sizing: border-box;
 }
-.nav1{
-   
-   display: inline-block;
-  
-   
-}
+
 .header1{
-    background-color:#FFCAD4 ;
+    background-color:#F67280 ;
     padding: 8px 16px;
     margin: 0;
     border-style: double;
     
+}
+
+.nav1{
+   
+   display: inline-flex;
+   position: relative;
+   float: right;
+   
 }
 
 .logo{
@@ -23,41 +26,58 @@
     display: inline-block;
     font-style: oblique;
     color: black;
-    
-    
 }
-.li1{
-    display: inline-block;
-    padding: 0 20px;
-    font-size: 20px;
-    
-}
+
 .ul1{
     list-style: none;
     margin: 0;
     padding: 0;
     
 }
+
 .ul1 a{
     text-decoration: none;
     color: black;
+    
 }
+
+.li1{
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 20px;
+    
+}
+
+.li1 ::before{
+    content: '\273F';
+    color: black;
+}
+
 .anasayfa{
     float: left;
-   
+    
     
     display: flex;
     
     height: 550px;
     align-items: center;
 }
+
+.anasayfa2{
+    float: right;
+    
+   
+}
+
 .anasayfa_yazi1{
     font-size: 70px;
 }
+
 .anasayfa_yazi2{
     font-size: 50px;
+    color: black;
+    text-align: center;
 }
-.anasayfa2{
-    float: right;
-    height: 400px;
-}
+
+body{background-image: url(arkaplan.jpg);}
+
