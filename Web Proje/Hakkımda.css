@@ -2,53 +2,24 @@
     box-sizing: border-box;
 }
 
-.header1{
-    background-color:#F67280 ;
-    padding: 8px 16px;
-    margin: 0;
-    border-style: double;
+.navbar-nav a{
+    color:#F67280;
     
 }
 
-.nav1{
-   
-   display: inline-flex;
-   position: relative;
-   float: right;
-   
-}
-
-.logo{
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 32px;
-    margin-right: 60px;
-    display: inline-block;
+.navbar-brand{
     font-style: oblique;
-    color: black;
 }
 
-.ul1{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    
-}
-
-.ul1 a{
-    text-decoration: none;
-    color: black;
-    
-}
-
-.li1{
+.hakkimda{
     display: inline-block;
-    padding: 0 20px;
-    font-size: 20px;
-    
 }
-
-.li1 ::before{
-    content: '\273F';
-    color: black;
+.maddeler{
+    
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 8px;
+    padding: 16px;
+    width: 30%;
+    text-align: center;
 }
