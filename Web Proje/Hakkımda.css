@@ -1,0 +1,45 @@
+*{ 
+    box-sizing: border-box;
+}
+
+.navbar-nav a{
+    color:#F67280;
+    
+}
+
+.navbar-brand{
+    font-style: oblique;
+}
+
+.hakkimda{
+    display: inline-block;
+}
+.maddeler{
+    border-style: double;
+    
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 16px;
+    padding: 16px;
+    width: 30%;
+    text-align: center;
+    background-color: #FFCBCB;
+    border-radius:20px
+    
+    
+}
+
+
+
+.maddeler a{
+    color: #121481;
+    font-style: italic;
+  
+}
+
+.maddeler img{
+
+    border-radius: 90px;
+    margin-left: 30px;
+    
+}
