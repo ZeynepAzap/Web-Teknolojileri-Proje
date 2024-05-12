@@ -1,0 +1,13 @@
+*{ 
+    box-sizing: border-box;
+}
+
+.navbar-nav a{
+    color:#F67280;
+    
+}
+
+.navbar-brand{
+    font-style: oblique;
+}
+
