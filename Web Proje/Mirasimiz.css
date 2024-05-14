@@ -10,3 +10,9 @@
 .navbar-brand{
     font-style: oblique;
 }
+
+.col img{
+    height: 350px;
+    margin: 20px;
+    border-radius: 30px;
+}

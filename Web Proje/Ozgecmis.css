@@ -1,0 +1,21 @@
+*{ 
+    box-sizing: border-box;
+}
+
+.navbar-nav a{
+    color:#F67280;
+    
+}
+
+.navbar-brand{
+    font-style: oblique;
+}
+
+main{
+    background-color: white;
+
+    margin: 40px;
+    border-style: double;
+    border-width: 3px;
+
+}
