@@ -16,7 +16,7 @@
 }
 .maddeler{
     border-style: double;
-    
+    height: 590px;
     display: inline-flex;
     flex-wrap: wrap;
     margin: 16px;

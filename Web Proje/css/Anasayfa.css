@@ -12,11 +12,11 @@
 }
 
 .anasayfa{
-    margin: 30px;
+    margin: 40px;
     float: left;
     display: inline-flex; 
     flex-wrap: wrap;
-    align-items: center;
+    
  
   
 }
@@ -32,7 +32,7 @@
 .anasayfa_yazi1{
     font-size: 35px;
     font-family:cursive;
-    color: #49505d;
+    color: black;
     text-align: center;
 }
 
@@ -42,7 +42,7 @@
 
 .maddeler{
     border-style: double;
-    
+    height: 590px;
     display: inline-flex;
     flex-wrap: wrap;
     margin: 16px;
@@ -66,7 +66,8 @@
 .maddeler img{
 
     border-radius: 90px;
-    margin-left: 30px;
+    
+    
     
 }
 
