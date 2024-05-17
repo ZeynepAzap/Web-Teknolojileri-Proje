@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim Formu</title>
+    <style>
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        p.error {
+            color: red;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <form action="submit.php" method="post">
+            <div>
+                <label for="name">Ad Soyad:</label>
+                <input type="text" id="name" v-model="formData.name" @blur="validateName">
+                <p v-if="showNameWarning" style="color: red;">Ad Soyad alanı boş bırakılamaz!</p>
+            </div>
+            <div>
+                <label for="email">E-posta:</label>
+                <input type="email" id="email" v-model="formData.email" @blur="validateEmail">
+                <p v-if="showEmailWarning" style="color: red;">Geçerli bir e-posta adresi girin!</p>
+            </div>
+            <div>
+                <label for="message">Mesaj:</label>
+                <textarea id="message" v-model="formData.message" @blur="validateMessage"></textarea>
+                <p v-if="showMessageWarning" style="color: red;">Mesaj alanı boş bırakılamaz!</p>
+            </div>
+            <button type="button" @click="validateFormVue">Gönder (Vue)</button>
+            <button type="button" @click="validateFormJS">Gönder (JS)</button>
+            <button type="submit">Gönder (PHP)</button>
+            <button type="button" @click="resetForm">Temizle</button>
+
+            
+          
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                formData: {
+                    name: '',
+                    email: '',
+                    message: ''
+                },
+                showNameWarning: false,
+                showEmailWarning: false,
+                showMessageWarning: false
+            },
+            methods: {
+                validateName() {
+                    if (!this.formData.name) {
+                        this.showNameWarning = true;
+                    } else {
+                        this.showNameWarning = false;
+                    }
+                },
+                validateEmail() {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(this.formData.email)) {
+                        this.showEmailWarning = true;
+                    } else {
+                        this.showEmailWarning = false;
+                    }
+                },
+                validateMessage() {
+                    if (!this.formData.message) {
+                        this.showMessageWarning = true;
+                    } else {
+                        this.showMessageWarning = false;
+                    }
+                },
+                validateFormVue() {
+                    this.validateName();
+                    this.validateEmail();
+                    this.validateMessage();
+
+                    if (this.showNameWarning || this.showEmailWarning || this.showMessageWarning) {
+                        alert('Lütfen tüm alanları doldurun ve geçerli bir e-posta adresi girin!');
+                        return;
+                    }
+                },
+                validateFormJS() {
+                    const nameInput = document.getElementById('name');
+                    const emailInput = document.getElementById('email');
+                    const messageInput = document.getElementById('message');
+
+                    if (!nameInput.value) {
+                        this.showNameWarning = true;
+                    } else {
+                        this.showNameWarning = false;
+                    }
+
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailInput.value)) {
+                        this.showEmailWarning = true;
+                    } else {
+                        this.showEmailWarning = false;
+                    }
+
+                    if (!messageInput.value) {
+                        this.showMessageWarning = true;
+                    } else {
+                        this.showMessageWarning = false;
+                    }
+
+                    if (this.showNameWarning || this.showEmailWarning || this.showMessageWarning) {
+                        alert('Lütfen tüm alanları doldurun ve geçerli bir e-posta adresi girin!');
+                        return;
+                    }
+                    
+                },
+                resetForm() {
+                    this.formData.name = '';
+                    this.formData.email = '';
+                    this.formData.message = '';
+                    this.showNameWarning = false;
+                    this.showEmailWarning = false;
+                    this.showMessageWarning = false;
+                }
+            }
+            
+        });
+    </script>
+</body>
+</html>
+
