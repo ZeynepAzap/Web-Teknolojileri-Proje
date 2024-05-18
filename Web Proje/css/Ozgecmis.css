@@ -13,9 +13,14 @@
 
 main{
     background-color: white;
-
-    margin: 40px;
+    padding: 40px;
+    margin: 80px 100px;
     border-style: double;
     border-width: 3px;
 
+}
+main header{
+    background-color: #FFEAE3 ;
+    padding: 5px;
+    border-style: double;
 }

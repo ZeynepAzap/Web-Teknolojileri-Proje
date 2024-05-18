@@ -1,59 +1,48 @@
-body {
+*{ 
+    box-sizing: border-box;
+}
+
+.navbar-nav a{
+    color:#F67280;
+    
+}
+
+.navbar-brand{
+    font-style: oblique;
+}
+form {
+    max-width: 400px;
+    margin: 100px auto;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  
-    justify-content: center;
-    align-items: center;
 }
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
+label {
     display: block;
     margin-bottom: 5px;
 }
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: calc(100% - 20px);
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
     padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
 }
-
-.form-group input[type="checkbox"],
-.form-group input[type="radio"] {
-    width: auto;
+p.error {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
-
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
+#app button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #F67280;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
-
-button:hover {
-    background-color: #0056b3;
+#app button:hover {
+    background-color: #45a092;
 }
