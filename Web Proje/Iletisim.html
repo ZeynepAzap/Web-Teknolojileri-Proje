@@ -47,6 +47,17 @@
                 <textarea id="message" name="message" v-model="formData.message" @blur="validateMessage"></textarea>
                 <p v-if="showMessageWarning" style="color: red;">Mesaj alanı boş bırakılamaz!</p>
             </div>
+         
+            <div>
+                <label for="gender">Cinsiyet:</label>
+                <select id="gender" name="gender" v-model="formData.gender" @change="validateGender">
+                    <option value="">Seçiniz</option>
+                    <option value="male">Erkek</option>
+                    <option value="female">Kadın</option>
+                </select>
+                <p v-if="showGenderWarning" style="color: red;">Cinsiyet seçmelisiniz!</p>
+            </div>
+            
             <button type="button" @click="validateFormVue">Kontrol et (Vue)</button>
             <button type="button" @click="validateFormJS">Kontrol et (JS)</button>
             <button type="submit">Gönder (PHP)</button>
@@ -65,11 +76,13 @@
                 formData: {
                     name: '',
                     email: '',
-                    message: ''
+                    message: '',
+                    gender:''
                 },
                 showNameWarning: false,
                 showEmailWarning: false,
-                showMessageWarning: false
+                showMessageWarning: false,
+                showGenderWarning: false,
             },
             methods: {
                 validateName() {
@@ -94,12 +107,21 @@
                         this.showMessageWarning = false;
                     }
                 },
+                validateGender() {
+                if (!this.formData.gender) {
+                    this.showGenderWarning = true; // Cinsiyet seçilmediği durumda uyarı göster
+                } else {
+                    this.showGenderWarning = false; // Cinsiyet seçildiğinde uyarıyı kaldır
+                }
+            },
+
                 validateFormVue() {
                     this.validateName();
                     this.validateEmail();
                     this.validateMessage();
+                    this.validateGender();
 
-                    if (this.showNameWarning || this.showEmailWarning || this.showMessageWarning) {
+                    if (this.showNameWarning || this.showEmailWarning || this.showMessageWarning || this.showGenderWarning) {
                         alert('Lütfen tüm alanları doldurun ve geçerli bir e-posta adresi girin!');
                         return;
                     }
@@ -128,7 +150,15 @@
                         this.showMessageWarning = false;
                     }
 
-                    if (this.showNameWarning || this.showEmailWarning || this.showMessageWarning) {
+                                 
+                    if (!this.formData.gender) {
+                        this.showGenderWarning = true; // Cinsiyet seçilmediği durumda uyarı göster
+                    } else {
+                        this.showGenderWarning = false; // Cinsiyet seçildiğinde uyarıyı kaldır
+                    }
+
+
+                    if (this.showNameWarning || this.showEmailWarning || this.showMessageWarning || this.showGenderWarning) {
                         alert('Lütfen tüm alanları doldurun ve geçerli bir e-posta adresi girin!');
                         return;
                     }
